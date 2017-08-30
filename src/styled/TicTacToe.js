@@ -53,15 +53,26 @@ export const Squares = ({
     }
     return (
       <Text
-
+        key={index}
+        index={index}
+        x={position[0]}
+        y={position[1]}
+        fontSize={unit}
+        width={unit}
+        text={mark}
+        fill={fill}
+        fontFamily={'Helvetica'}
+        align={'center'}
+        onClick={(event)=>{
+          let index = event.target.index
+          makeMove(index, ownMark)
+        }}
       />
     )
   })
   return(
     <Layer>
-      <Text
-
-      />
+      {squares}
     </Layer>
   )
 }
